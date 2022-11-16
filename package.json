@@ -1,0 +1,41 @@
+{
+    "name": "@the-standard/standard-libraries",
+    "version": "1.0.0",
+    "description": "Core library for standard libs",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "build": "tsc --project tsconfig.build.json",
+        "clean": "rm -rf ./lib",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "lint": "tslint -p tsconfig.json",
+        "postversion": "git push && git push --tags",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "test": "jest --config jest.config.js",
+        "version": "npm run format && git add -A src"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ecoulson/standard-core.git"
+    },
+    "author": "Evan Coulson",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ecoulson/standard-core/issues"
+    },
+    "homepage": "https://github.com/ecoulson/standard-core#readme",
+    "dependencies": {
+        "@the-standard/conditions": "^1.0.4",
+        "@the-standard/exception-handlers": "^1.0.5",
+        "@the-standard/exceptions": "^1.0.6",
+        "@the-standard/partials": "^1.0.4",
+        "@the-standard/runtimes": "^1.0.4",
+        "@the-standard/types": "^1.0.1",
+        "@the-standard/validations": "^1.0.6"
+    }
+}
