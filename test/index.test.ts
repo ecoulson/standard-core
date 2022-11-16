@@ -1,3 +1,5 @@
-describe("Core Test Suite", () => {
-    test("Dummy test", () => {})
-})
+describe('Core Test Suite', () => {
+    test('Dummy test', () => {
+        expect(true).toBeTruthy();
+    });
+});
